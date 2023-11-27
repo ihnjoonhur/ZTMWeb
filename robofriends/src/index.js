@@ -1,18 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client"; // Correct import
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "tachyons";
-import App from "./App"; // Correct import
+import App from "./App";
 import { robots } from "./robots";
 
 const root = document.getElementById("root");
+const reactRoot = createRoot(root);
 
-ReactDOM.render(
+reactRoot.render(
   <React.StrictMode>
-    <App robots={robots} /> {/* Pass robots data to the App component */}
-  </React.StrictMode>,
-  root
+    <App robots={robots} />
+  </React.StrictMode>
 );
 
 reportWebVitals();
